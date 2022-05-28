@@ -1,0 +1,106 @@
+@import '../variables';
+
+.grid_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: min(80vw, 1000px);
+    height: 100%;
+    max-height: 600px;
+    margin: calc((50vh - min(300px, 50%))) max(10vw, calc(50vw - 500px)) calc((50vh - min(300px, 50%))) max(10vw, calc(50vw - 500px));
+    border: 2px solid rgb(240, 240, 240);
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+}
+
+.container {
+    padding-top: 40px;
+    position: relative;
+    padding-bottom: 80px;
+    box-shadow: -2px 0px 15px -2px rgba(215, 215, 215, 0.33);
+
+    h2 {
+        display: flex;
+        justify-content: center;
+        margin-inline: 0;
+        font-family: 'Doppio One', sans-serif;
+        letter-spacing: 2px;
+        font-size: 2.5rem;
+    }
+}
+
+.fields_container {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1.2em;
+    margin-top: 20px;
+    max-width: 450px;
+    margin-inline: auto;
+}
+
+.container_image {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    button {
+        font-family: 'Baloo Bhai 2';
+        font-size: 1.1rem;
+        padding: .6em .8em;
+        color: $special-purple;
+        border: 1px solid $special-purple;
+        background-color: white;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all .25s ease-in;
+
+        &:hover {
+            color: white;
+            background-color: $special-purple;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    margin-top: 30px;
+    font-size: clamp(.6rem, 1.5vw, 1rem);
+    font-family: 'Doppio One', sans-serif;
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 830px) {
+    .grid_container {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin-inline: auto;
+        max-height: 650px;
+        margin-block: 5vh;
+    }
+
+    .container {
+        padding-top: 0;
+        padding-bottom: 20px;
+    }
+
+    .links {
+        font-size: clamp(.5rem, 3vw, .8rem)
+    }
+
+    .fields_container {
+        margin-top: 10px;
+    }
+}

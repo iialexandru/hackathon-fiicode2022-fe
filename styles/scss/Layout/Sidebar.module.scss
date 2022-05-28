@@ -1,0 +1,66 @@
+.container {
+    position: fixed;
+    border-right: 2px solid gray;
+    height: 100vh;
+    width: 250px;
+    overflow: hidden;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background-color: rgb(240, 240, 240);
+    margin-top: -30px;
+
+    &::-webkit-scrollbar { 
+        display: none; 
+    }
+
+    ul {
+        list-style-type: none;
+        padding-inline: 0;
+        margin-top: 0;
+        padding-top: 20px;
+
+        li {
+            padding-inline: 20px;
+            padding-block: 1.2em;
+            margin-block: .3em;
+            transition: all .25s;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: .2em;
+            font-family: 'Baloo Bhai 2';
+            white-space: nowrap;
+            overflow-x: hidden;
+
+            &:hover {
+                background: rgb(0, 0, 0, .1);
+
+                span {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+    .container {
+        max-width: 280px;
+        display: none;
+        z-index: 1000;
+    }
+
+    .slide_in {
+        display: block;
+        width: 100vw;
+        transition: all .75s;
+    }
+
+    .slide_out {
+        display: block;
+        width: 0vw;
+        transition: all .75s;
+
+    }
+}

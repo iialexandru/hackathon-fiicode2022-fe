@@ -1,16 +1,1 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
+body,html{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;margin:0;padding:0}a{color:inherit;text-decoration:none}*{box-sizing:border-box}@font-face{font-display:swap;font-family:Doppio One;font-style:normal;font-weight:400;src:url(/fonts/DoppioOne/DoppioOne.woff2) format("woff2"),url(/fonts/DoppioOne/DoppioOne.woff) format("woff"),url(/fonts/DoppioOne/DoppioOne.ttf) format("truetype")}@font-face{font-display:swap;font-family:Baloo Bhai\ 2;font-style:normal;font-weight:400;src:url(/fonts/DoppioOne/DoppioOne.woff2) format("woff2"),url(/fonts/DoppioOne/DoppioOne.woff) format("woff"),url(/fonts/DoppioOne/DoppioOne.ttf) format("truetype")}

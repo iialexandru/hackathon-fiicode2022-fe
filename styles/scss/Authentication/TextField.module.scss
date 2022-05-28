@@ -1,0 +1,50 @@
+.input {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    gap: .1em;
+    width: 80%;
+    margin-left: 10%;
+
+    label {
+        font-family: 'Baloo Bhai 2';
+    }
+    
+    input {
+        border: 0;
+        border-bottom: 2px solid rgb(200, 200, 200);
+        padding: .5em .2em .5em 2em;
+        border-radius: 2px 2px 0 0;
+        font-size: .9rem;
+        font-family: sans-serif;
+        background-color: rgb(245, 245, 245);
+        
+        &:focus {
+            outline: none;
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+}
+
+.error input {
+    border-color: red;
+    outline-color: red;
+
+    &:focus {
+        outline-color: red;
+    }
+
+    &:focus-visible {
+        outline-color: red;
+    }
+}
+
+.error_text {
+    color: red;
+    font-weight: bold;
+    font-family: 'Baloo Bhai 2';
+    font-size: .7rem;
+}

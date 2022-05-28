@@ -1,0 +1,63 @@
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.qr_code {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin-inline: 5vw;
+
+    span {
+        font-family: 'Doppio One';
+        color: rgb(10, 10, 10);
+        width: 80%;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+}
+
+.inputs {
+    display: flex;
+    gap: 2em;
+}
+
+.form {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin-inline: 5vw;
+    gap: 2em;
+
+    h2 {
+        text-align: center;
+        font-family: 'Baloo Bhai 2';
+    }
+}
+
+.buttons {
+    display: flex;
+    gap: 2em;
+    margin-top: 30px;
+
+    button {
+        font-family: 'Baloo Bhai 2';
+        padding: .8em 2em;
+        border-radius: 2px;
+        transition: all .25s;
+        cursor: pointer;
+
+        &:hover {
+            opacity: .9;
+        }
+
+        &:active {
+            opacity: .8;
+        }
+    }
+}

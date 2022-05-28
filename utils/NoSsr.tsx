@@ -1,16 +1,19 @@
 import { Fragment, useEffect, useState } from 'react'
 
-interface NoSSRProps { 
+interface HydrationProps { 
     children: any;
     fallback: any;
 }
 
-export const NoSSR = ({children, fallback} : NoSSRProps) => {
-  const [isMounted, setIsMounted] = useState(false)
+const NoSSR = ({children, fallback} : HydrationProps) => {
+  
+  const [ loading, setLoading ] = useState(false)
 
   useEffect(() => {
-    setIsMounted(true)
+    setLoading(true)
   }, [])
 
-  return <Fragment>{isMounted ? children : fallback}</Fragment>
+  return <Fragment>{loading ? children : fallback}</Fragment>
 }
+
+export default NoSSR;
