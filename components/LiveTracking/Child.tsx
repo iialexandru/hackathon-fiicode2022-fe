@@ -36,8 +36,6 @@ const Child: FC<Data> = ({ name, age, notification, id }) => {
 
     getLocation()
 
-    let myLatLng: any;
-
     const ref = useRef<any>(null)
     
     useEffect(() => {
@@ -73,16 +71,6 @@ const Child: FC<Data> = ({ name, age, notification, id }) => {
       
         const onUnmount = useCallback(function callback(map: any) {
           setMap(null)
-        }, [])
-
-        useEffect(() => {
-            const interval = setInterval(async () => {
-                myLatLng = new window.google.maps.LatLng(lat, lng); 
-            }, 6000)
-
-            return () => {
-                clearInterval(interval)
-            }
         }, [])
 
         useEffect(() => {
