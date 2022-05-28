@@ -21,10 +21,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [ activateMenu, setActivateMenu ] = useState(false)
 
   useEffect(() => {
-    if(router.pathname !== '/authentication/login' && router.pathname !== '/authentication/register' && router.pathname !== '/authentication/forgot-password' && router.pathname !== '/authentication/forgot-password/[token]' && router.pathname !== '/child-request' && router.pathname !== '/child-request/decide/[qr]' && router.pathname !== '/child-dashboard') {
+    if(router.pathname !== '/authentication/login' && router.pathname !== '/authentication/register' && router.pathname !== '/authentication/forgot-password' && router.pathname !== '/authentication/forgot-password/[token]' && router.pathname !== '/child-request' && router.pathname !== '/child-request/decide/[qr]') {
       setShowSD(true)
     }
-    if(router.pathname !== '/authentication/login' && router.pathname !== '/authentication/register' && router.pathname !== '/authentication/forgot-password' ) {
+    if(router.pathname !== '/authentication/login' && router.pathname !== '/authentication/register' && router.pathname !== '/authentication/forgot-password' && router.pathname !== '/authentication/forgot-password/[token]') {
       setShowHeader(true)
     }
   }, [router.pathname])
