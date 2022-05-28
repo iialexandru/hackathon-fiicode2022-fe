@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <AuthProvider>
       <Head>
-        <title>Hackathon</title>
+        <title>Child Track</title>
         <meta name="description" content="O aplicatie pentru administrarea noilor idei oferite de catre oameni dintr-o anumita comuna/localitate/judet pentru imbunatatirea acesteia" />
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
         <meta charSet="utf-8" />

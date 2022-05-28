@@ -144,7 +144,7 @@ const Notifications: NextPage<Props> = ({ _myChildren, _otherChildrenIWatch, _fe
                     <div className={styles.section_container}>
                         <div className={`${styles.item} ${styles.field_names}`}>
                             <span>Location</span>
-                            <span>Radius M</span>
+                            <span>Diameter M</span>
                             <span>Name</span>
                             <span>Actions</span>
                         </div>
@@ -158,16 +158,16 @@ const Notifications: NextPage<Props> = ({ _myChildren, _otherChildrenIWatch, _fe
 
                         {fences.map((fence: any, i: number) => {
 
-                            const [ hoverDelete, setHoverDelete ] = useState(false)
                             return (
                                 <>
                                     {fence.fences.map((sm: any, i: number) => {
+                                         const [ hoverDelete, setHoverDelete ] = useState(false)
                                         return (
                                             <div className={styles.item}>
                                                 <span>{sm.location}</span>
                                                 <span>{sm.radius}</span>
                                                 <span>{sm.name}</span>
-                                                <Image onClick={e => deleteFence(e, sm.name)} style={{ zIndex: 1 }} onMouseEnter={() => setHoverDelete(true)} onMouseLeave={() => setHoverDelete(false)}src={!hoverDelete ? 'https://res.cloudinary.com/multimediarog/image/upload/v1653645718/HACKATHON-FIICODE/delete-10402_cpqnfc.svg' : 'https://res.cloudinary.com/multimediarog/image/upload/v1653645715/HACKATHON-FIICODE/delete-10403_ietme5.svg' } width={50} height={50} />
+                                                <Image onClick={e => deleteFence(e, sm.name)} style={{ zIndex: 1, cursor: 'pointer' }} onMouseEnter={() => setHoverDelete(true)} onMouseLeave={() => setHoverDelete(false)}src={!hoverDelete ? 'https://res.cloudinary.com/multimediarog/image/upload/v1653645718/HACKATHON-FIICODE/delete-10402_cpqnfc.svg' : 'https://res.cloudinary.com/multimediarog/image/upload/v1653645715/HACKATHON-FIICODE/delete-10403_ietme5.svg' } width={50} height={50} />
                                             </div>
                                         )
                                     })}
