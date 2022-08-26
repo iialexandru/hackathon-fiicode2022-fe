@@ -7,10 +7,6 @@ import styles from '../../styles/scss/Child/Container.module.scss'
 import NoSSR from '../../utils/NoSSR'
 import { QrReader } from "react-qr-reader";
 
-const BarcodeScannerComponent = dynamic(() => import("react-qr-barcode-scanner"), {
-    ssr: false
-})
-
 const ChildRequest: NextPage = () => {
     const router = useRouter()
     const [data, setData] = useState("Not Found");

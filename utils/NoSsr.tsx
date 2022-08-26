@@ -1,11 +1,7 @@
 import { Fragment, useEffect, useState } from 'react'
 
-interface HydrationProps { 
-    children: any;
-    fallback: any;
-}
 
-const NoSSR = ({children, fallback} : HydrationProps) => {
+const NoSSR = ({children, fallback} : {children: any, fallback: any}) => {
   
   const [ loading, setLoading ] = useState(false)
 
