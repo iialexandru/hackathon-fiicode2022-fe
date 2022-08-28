@@ -4,7 +4,7 @@ import { useState, } from 'react'
 import { useRouter } from 'next/router'
 
 import styles from '../../styles/scss/Child/Container.module.scss'
-import NoSSR from '../../utils/NoSSR'
+import {NoSSR} from '../../utils/NoSSR'
 import { QrReader } from "react-qr-reader";
 
 const ChildRequest: NextPage = () => {

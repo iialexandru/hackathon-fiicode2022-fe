@@ -9,7 +9,7 @@ import Link from 'next/link'
 import styles from '../../../styles/scss/Authentication/Register.module.scss'
 import TextField from '../../../components/Authentication/TextField'
 import { server, dev } from '../../../config/server'
-import NoSSR from '../../../utils/NoSSR'
+import {NoSSR} from '../../../utils/NoSSR'
 import useWindowSize from '../../../utils/useWindowSize'
 import Code from '../../../components/Authentication/Registration/Code'
 

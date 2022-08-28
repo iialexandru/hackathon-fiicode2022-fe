@@ -1,14 +1,16 @@
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 
-const NoSSR = ({children, fallback} : {children: any, fallback: any}) => {
-  
-  const [ loading, setLoading ] = useState(false)
-
-  useEffect(() => {
-    setLoading(true)
-  }, [])
-
-  return <>{loading ? children : fallback}</>
+interface NoSSRProps { 
+    children: any;
+    fallback: any;
 }
 
-export default NoSSR;
+export const NoSSR = ({children, fallback} : NoSSRProps) => {
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  return <Fragment>{isMounted ? children : fallback}</Fragment>
+}
