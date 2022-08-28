@@ -71,7 +71,7 @@ const AcceptPage: NextPage = () => {
     return (
         <div className={styles.container}>
             <div className={styles.form}>
-                <h2>Do you accept to track this person's movements and receive notifications about his status?</h2>
+                <h2>Do you accept to track this person&apos;s movements and receive notifications about his status?</h2>
                 <div className={styles.inputs}>
                     <TextField value={name} onChange={e => setName(e.target.value)} label={'Name'} variant='standard' />
                     <TextField value={age} onChange={e => setAge(parseInt(e.target.value))} label={'Age'} type='number' variant='standard' />

@@ -105,19 +105,18 @@ const Notifications: NextPage<Props> = ({ _myChildren, _otherChildrenIWatch, _fe
             async (response) => {
               const { lat, lng } = response.results[0].geometry.location;
 
-              const location = name;
-              const result = await axios.post(`${server}/api-hkt/child/create-fence`, { lat, lng, radius, pName, location  }, { withCredentials: true })
+              const result = await axios.post(`${server}/api-hkt/child/create-fence`, { lat, lng, radius, pName, location: name }, { withCredentials: true })
                                 .then(res => res.data)
-                                .catch(err => console.log(err))
+                                .catch(err => console.log(err.response.data.err))
     
             router.reload()
             },
             (error) => {
-              console.error(error);
+              console.log(error, 's');
               setError(true)
               error = true
             }
-          );
+          )
           if(error) {
               setError(true)
               return;
@@ -160,14 +159,15 @@ const Notifications: NextPage<Props> = ({ _myChildren, _otherChildrenIWatch, _fe
 
                             return (
                                 <>
-                                    {fence.fences.map((sm: any, i: number) => {
+                                    {fence.fences.map((sm: any, key: number) => {
+                                         // eslint-disable-next-line react-hooks/rules-of-hooks
                                          const [ hoverDelete, setHoverDelete ] = useState(false)
                                         return (
-                                            <div className={styles.item}>
+                                            <div className={styles.item} key={key}>
                                                 <span>{sm.location}</span>
                                                 <span>{sm.radius}</span>
                                                 <span>{sm.name}</span>
-                                                <Image onClick={e => deleteFence(e, sm.name)} style={{ zIndex: 1, cursor: 'pointer' }} onMouseEnter={() => setHoverDelete(true)} onMouseLeave={() => setHoverDelete(false)}src={!hoverDelete ? 'https://res.cloudinary.com/multimediarog/image/upload/v1653645718/HACKATHON-FIICODE/delete-10402_cpqnfc.svg' : 'https://res.cloudinary.com/multimediarog/image/upload/v1653645715/HACKATHON-FIICODE/delete-10403_ietme5.svg' } width={50} height={50} />
+                                                <Image onClick={e => deleteFence(e, sm.location)} style={{ zIndex: 1, cursor: 'pointer' }} onMouseEnter={() => setHoverDelete(true)} onMouseLeave={() => setHoverDelete(false)}src={!hoverDelete ? 'https://res.cloudinary.com/multimediarog/image/upload/v1653645718/HACKATHON-FIICODE/delete-10402_cpqnfc.svg' : 'https://res.cloudinary.com/multimediarog/image/upload/v1653645715/HACKATHON-FIICODE/delete-10403_ietme5.svg' } width={50} height={50} />
                                             </div>
                                         )
                                     })}

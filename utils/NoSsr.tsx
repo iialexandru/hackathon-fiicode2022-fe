@@ -1,5 +1,4 @@
-import { Fragment, useEffect, useState } from 'react'
-
+import { useEffect, useState } from 'react'
 
 const NoSSR = ({children, fallback} : {children: any, fallback: any}) => {
   
@@ -9,7 +8,7 @@ const NoSSR = ({children, fallback} : {children: any, fallback: any}) => {
     setLoading(true)
   }, [])
 
-  return <Fragment>{loading ? children : fallback}</Fragment>
+  return <>{loading ? children : fallback}</>
 }
 
 export default NoSSR;

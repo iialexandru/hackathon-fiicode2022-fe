@@ -12,7 +12,6 @@ const ChildRequest: NextPage = () => {
     const [data, setData] = useState("Not Found");
 
     const handleScan = async (scanData: any) => {
-        console.log(`loaded data data`, scanData);
         if (scanData && scanData !== "") {
           setData(scanData)
           router.push(`http://localhost:3000/child-request/decide/${scanData}`)

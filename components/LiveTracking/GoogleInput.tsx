@@ -56,7 +56,7 @@ const SearchLocationInput: FC<Props> = ({ setName, setFullExactPosition }) => {
 
   useEffect(() => {
     loadScript(
-      `https://maps.googleapis.com/maps/api/js?key=AIzaSyChhnq77PKx2Ekl1HlXHnXN1ZjmkkgWUsY&libraries=places`,
+      `https://maps.googleapis.com/maps/api/js?key=AIzaSyC8OO5kEbqdGpEb_61WlsCnRUS_NHX94CE&libraries=places`,
       () => handleScriptLoad(setQuery, autoCompleteRef, setFullExactPosition, setName)
     );
   }, []);
@@ -64,7 +64,7 @@ const SearchLocationInput: FC<Props> = ({ setName, setFullExactPosition }) => {
   return (
       <FormControl variant='standard' >
         <InputLabel htmlFor='location'>Location</InputLabel>
-        <Input id='location' type='text' name='location' inputProps={{ ref: autoCompleteRef, value: query, onChange: (e: any) => { setQuery(e.target.value) }, placeholder: '' }} />
+        <Input id='location' type='text' name='location' value='' inputProps={{ ref: autoCompleteRef, value: query, onChange: (e: any) => { setQuery(e.target.value) }, placeholder: '' }} />
       </FormControl>
   );
 }

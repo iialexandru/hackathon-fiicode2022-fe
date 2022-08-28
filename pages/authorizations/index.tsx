@@ -143,7 +143,7 @@ const Authorizations: NextPage<Props> = ({ _peopleThatWatchMyChildren, _myChildr
                         </div>
                         {invites.requests.map((invite: any, i: number) => {
                             return (
-                                <div className={styles.item}>
+                                <div className={styles.item} key={i}>
                                     <span>{invite.email}</span>
                                     <span>{invite.role}</span>
                                     <span>{invite.childName}</span>
@@ -195,8 +195,8 @@ const Authorizations: NextPage<Props> = ({ _peopleThatWatchMyChildren, _myChildr
                                     onChange={e => setChild(e.target.value)}
                                     variant='standard'
                                 >
-                                    {myChildren.map((child: any, i: number) => {
-                                        return <MenuItem value={child._id}>{child.name}</MenuItem>
+                                    {myChildren.map((child: any, key: number) => {
+                                        return <MenuItem key={key} value={child._id}>{child.name}</MenuItem>
                                     })}
                                 </Select>
                             </FormControl>
